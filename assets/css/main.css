@@ -1265,10 +1265,6 @@ button:hover {
   margin-bottom: 20px;
 }
 
-#about,
-#projects {
-  display: none;
-}
 .justified {
   text-align: justify;
   font-size: 20px;

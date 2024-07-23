@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joy Owusu Ansah - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+    <style>
+      #about,
+      #projects {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 900px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+      }
+      .backBtn {
+        margin-bottom: 20px;
+      }
+      #header {
+        transition: opacity 0.3s ease-in-out;
+      }
+      #header.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="bg"></div>
+      <div id="overlay"></div>
+      <div id="main">
+        <!-- Header -->
+        <header id="header">
+          <h1>JOY &nbsp;&nbsp; OWUSU &nbsp;&nbsp; ANSAH</h1>
+          <p class="paragraph">
+            Software Engineer &nbsp;&bull;&nbsp; AI Engineer &nbsp;&bull;&nbsp;
+            CGI Artist
+          </p>
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href="https://x.com/kwame_ayew_"
+                  target="_blank"
+                  class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.facebook.com/profile.php?id=100074871207486"
+                  target="_blank"
+                  class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/kwame_ayew_/?next=%2F"
+                  target="_blank"
+                  class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/aduuuna"
+                  target="_blank"
+                  class="icon brands fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/joy-owusu-ansah-956b01244/"
+                  target="_blank"
+                  class="icon brands fab fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="nav-buttons">
+            <button id="aboutBtn">About Me</button>
+            <button id="projectsBtn">Projects</button>
+          </div>
+        </header>
+
+        <section id="about">
+          <button class="backBtn">Back</button>
+          <h2 class="justified">About Me</h2>
+          <p class="just">
+            Hello, I'm Joy Owusu Ansah. I'm an enthusiastic Software Engineer,
+            AI Engineer, and CGI Artist. Currently, I'm an undergraduate
+            pursuing a degree in Computer Science at the University of Ghana,
+            and I'm also a Software Engineer fellow at Headstarters AI. I bring
+            a robust background in crafting innovative solutions and producing
+            captivating visual content. My skills span software development,
+            artificial intelligence, and computer-generated imagery. I thrive on
+            tackling challenging projects that stretch the limits of technology
+            and creativity.
+          </p>
+        </section>
+
+        <section id="projects">
+          <button class="backBtn">Back</button>
+          <h2 class="justified">Projects</h2>
+          <br />
+          <div class="project">
+            <h3 class="justif">Currency Converter</h3>
+            <p class="just">
+              The Currency Converter web app allows users to convert between
+              major currencies such as the Euro, Pound, Dollar, and Cedi. This
+              project was developed using HTML, CSS, and JavaScript. &nbsp;
+              &nbsp;
+              <a
+                href="https://currency-converter-three-psi.vercel.app/"
+                target="_blank"
+                >View &#128279;</a
+              >
+            </p>
+            <br />
+          </div>
+          <div class="project">
+            <h3 class="justif">To Do</h3>
+            <p class="just">
+              The To-Do web app enables users to create tasks by specifying a
+              title, date, and description. Users can also delete tasks from
+              their list after adding them. &nbsp; &nbsp;
+              <a href="https://todo-omega-ochre.vercel.app/" target="_blank"
+                >View &#128279;</a
+              >
+            </p>
+            <br />
+          </div>
+          <div class="project">
+            <h3 class="justif">Binary Decimal Converter</h3>
+            <p class="just">
+              The Binary Decimal Converter enables users to convert numbers from
+              base 10 to binary. Users enter a number in the text box and click
+              the button to perform the conversion. When the number 5 is
+              entered, it triggers an animation before displaying the converted
+              value. &nbsp; &nbsp;
+              <a
+                href="https://binary-decimal-converter-smoky.vercel.app/"
+                target="_blank"
+                >View &#128279;</a
+              >
+            </p>
+            <br />
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <span class="copyright">
+            <p>&copy; 2024 <a>JustJOY</a>. All rights reserved.</p>
+          </span>
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        document.body.classList.remove("is-preload");
+      };
+      window.ontouchmove = function () {
+        return false;
+      };
+      window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+      };
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const header = document.getElementById("header");
+        const about = document.getElementById("about");
+        const projects = document.getElementById("projects");
+        const aboutBtn = document.getElementById("aboutBtn");
+        const projectsBtn = document.getElementById("projectsBtn");
+        const backBtns = document.querySelectorAll(".backBtn");
+
+        function showSection(section) {
+          header.classList.add("hidden");
+          about.style.display = "none";
+          projects.style.display = "none";
+          section.style.display = "block";
+        }
+
+        function showHeader() {
+          header.classList.remove("hidden");
+          about.style.display = "none";
+          projects.style.display = "none";
+        }
+
+        aboutBtn.addEventListener("click", () => showSection(about));
+        projectsBtn.addEventListener("click", () => showSection(projects));
+
+        backBtns.forEach((btn) => {
+          btn.addEventListener("click", showHeader);
+        });
+      });
+    </script>
+  </body>
+</html>
